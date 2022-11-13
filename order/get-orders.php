@@ -11,7 +11,6 @@ require_once('../connect.php');
 
 if($_POST) {
     $customer_id = $_POST['user_id'];
-    // $order_id = $_POST['_id'];
     $sql = "SELECT * FROM ORDERS WHERE customer_id = '$customer_id'";
     $exec = mysqli_query($connection, $sql);
 

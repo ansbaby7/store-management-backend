@@ -22,7 +22,6 @@ if($_POST) {
     $sql = "SELECT * FROM ORDER_ITEM WHERE order_id = '$order_id'";
     $exec3 = mysqli_query($connection, $sql);
     $order_items = [];
-    // $order_item = []
     while($result = mysqli_fetch_assoc($exec3)) {
         $product_id = $result['product_id'];
         $sql = "SELECT * FROM PRODUCT WHERE product_id = '$product_id'";

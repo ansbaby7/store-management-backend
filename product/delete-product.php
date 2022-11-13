@@ -26,6 +26,5 @@ if($_POST) {
 }
 
 
-// echo "<h1>Hello</h1>";
 
 ?>

@@ -31,11 +31,6 @@ if($_POST) {
         "message" => "Records counted successfully",
     ));
     
-    
-
-    
-
-
 }
 
 

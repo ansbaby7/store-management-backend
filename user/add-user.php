@@ -22,23 +22,10 @@ if($_POST) {
     $state = $_POST['state'];
     $pincode = $_POST['pincode'];
 
-    if($is_admin) {
-        $sql = "INSERT INTO ADMIN(username, email, hashed_password, fname, lname, mobile, city, state, pincode) values ('$username', '$email', '$hashed_password', '$fname', '$lname', '$mobile', '$city', '$state', '$pincode')";
-        $exec = mysqli_query($connection, $sql);
-        $_id = mysqli_insert_id($connection);
-        $result = array_merge($_POST,array("_id" => $_id));
-
-        // $result = mysqli_fetch_assoc($exec);
-        echo json_encode(array(
-            "user" => $result,
-            // "isAdmin" => $is_admin,
-            "message" => "Admin added successfully",
-        ));
-        return;
-    }
-    else {
-        $sql = "INSERT INTO CUSTOMER(username, email, hashed_password) values ('$username', '$email', '$hashed_password')";
-        $exec = mysqli_query($connection, $sql);
+    
+    $sql = "INSERT INTO CUSTOMER(username, email, hashed_password) values ('$username', '$email', '$hashed_password')";
+    $exec = mysqli_query($connection, $sql);
+    if($exec) {
         $_id = mysqli_insert_id($connection);
         $result = array_merge($_POST,array("_id" => $_id));
         // $result = mysqli_fetch_assoc($exec);
@@ -47,9 +34,13 @@ if($_POST) {
             // "isAdmin" => $is_admin,
             "message" => "Customer added successfully"
         ));
-        return;
     }
-
+    else {
+        echo json_encode(array(
+            // "isAdmin" => $is_admin,
+            "message" => "Customer insertion failed"
+        ));
+    }
     
 
 
