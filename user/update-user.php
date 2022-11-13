@@ -13,7 +13,7 @@ require_once('../connect.php');
 if($_POST) {
     $_id = $_POST['_id'];
     $is_admin = $POST['isAdmin'];
-    $email = $_POST['email'];
+    // $email = $_POST['email'];
     $hashed_password = $_POST['hashed_password'];
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
@@ -23,12 +23,12 @@ if($_POST) {
     $pincode = $_POST['pincode'];
 
     
-    $sql = "UPDATE CUSTOMER SET fname = '$fname', lname = '$lname', hashed_password = '$hashed_password', email = '$email', mobile = '$mobile', city = '$city', state = '$state', pincode = '$pincode' WHERE _id = '$_id'";
+    $sql = "UPDATE CUSTOMER SET fname = '$fname', lname = '$lname', hashed_password = '$hashed_password', mobile = '$mobile', city = '$city', state = '$state', pincode = '$pincode' WHERE _id = '$_id'";
     $exec = mysqli_query($connection, $sql);
 
     if($exec) {
     
-        $sql = "UPDATE ADMIN SET fname = '$fname', lname = '$lname', hashed_password = '$hashed_password', email = '$email', mobile = '$mobile', city = '$city', state = '$state', pincode = '$pincode' WHERE _id = '$_id'";
+        $sql = "UPDATE ADMIN SET fname = '$fname', lname = '$lname', hashed_password = '$hashed_password', mobile = '$mobile', city = '$city', state = '$state', pincode = '$pincode' WHERE _id = '$_id'";
         $exec1 = mysqli_query($connection, $sql); 
     }
 
