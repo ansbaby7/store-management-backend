@@ -7,6 +7,7 @@ $_POST = json_decode($rest_json, true);
 
 
 require_once('../connect.php'); 
+date_default_timezone_set('Asia/Kolkata');
 
 
 
