@@ -15,9 +15,15 @@ if($_POST) {
     $email = $_POST['email'];
     $hashed_password = $_POST['hashed_password'];
     $is_admin = $_POST['isAdmin'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $mobile = $_POST['mobile'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $pincode = $_POST['pincode'];
 
     if($is_admin) {
-        $sql = "INSERT INTO ADMIN(username, email, hashed_password) values ('$username', '$email', '$hashed_password')";
+        $sql = "INSERT INTO ADMIN(username, email, hashed_password, fname, lname, mobile, city, state, pincode) values ('$username', '$email', '$hashed_password', '$fname', '$lname', '$mobile', '$city', '$state', '$pincode')";
         $exec = mysqli_query($connection, $sql);
         $_id = mysqli_insert_id($connection);
         $result = array_merge($_POST,array("_id" => $_id));
@@ -50,6 +56,5 @@ if($_POST) {
 }
 
 
-// echo "<h1>Hello</h1>";
 
 ?>

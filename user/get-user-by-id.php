@@ -10,9 +10,9 @@ require_once('../connect.php');
 
 
 if($_POST) {
-    $username = $_POST['username'];
+    $_id = $_POST['_id'];
 
-    $sql = "SELECT * FROM ADMIN WHERE username='$username'";
+    $sql = "SELECT * FROM ADMIN WHERE _id='$_id'";
     $exec = mysqli_query($connection, $sql);
 
     $result_array = mysqli_fetch_assoc($exec);
@@ -32,7 +32,7 @@ if($_POST) {
     }
 
     else {
-        $sql = "SELECT * FROM CUSTOMER WHERE username='$username'";
+        $sql = "SELECT * FROM CUSTOMER WHERE _id='$_id'";
         $exec = mysqli_query($connection, $sql);
 
         $result_array = mysqli_fetch_assoc($exec);

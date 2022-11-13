@@ -13,11 +13,11 @@ if($_POST) {
     $customer_id = $_POST['user_id'];
     // $order_id = $_POST['_id'];
     $sql = "SELECT * FROM ORDERS WHERE customer_id = '$customer_id'";
-    $exec1 = mysqli_query($connection, $sql);
+    $exec = mysqli_query($connection, $sql);
 
     $orders = [];
 
-    while($order_result = mysqli_fetch_assoc($exec1)) {
+    while($order_result = mysqli_fetch_assoc($exec)) {
         $order_id = $order_result['_id'];
 
         $sql = "SELECT * FROM ORDERS WHERE _id = '$order_id'";

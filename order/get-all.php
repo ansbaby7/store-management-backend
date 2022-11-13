@@ -13,11 +13,11 @@ require_once('../connect.php');
 // $customer_id = $_POST['user_id'];
 // $order_id = $_POST['_id'];
 $sql = "SELECT * FROM ORDERS";
-$exec1 = mysqli_query($connection, $sql);
+$exe = mysqli_query($connection, $sql);
 
 $orders = [];
 
-while($order_result = mysqli_fetch_assoc($exec1)) {
+while($order_result = mysqli_fetch_assoc($exe)) {
     $order_id = $order_result['_id'];
     $user_id = $order_result['customer_id'];
 
