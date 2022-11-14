@@ -23,7 +23,7 @@ if($_POST) {
     $pincode = $_POST['pincode'];
 
     
-    $sql = "INSERT INTO CUSTOMER(username, email, hashed_password, fname, lname, mobile, city, state, pincode) values ('$username', '$email', '$hashed_password', '$lname', '$fname', '$mobile', '$city', '$state', '$pincode' )";
+    $sql = "INSERT INTO CUSTOMER(username, email, hashed_password, fname, lname, mobile, city, state, pincode) values ('$username', '$email', '$hashed_password', '$fname', '$lname', '$mobile', '$city', '$state', '$pincode' )";
     $exec = mysqli_query($connection, $sql);
     if($exec) {
         $_id = mysqli_insert_id($connection);
