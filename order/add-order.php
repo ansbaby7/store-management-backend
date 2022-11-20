@@ -32,7 +32,7 @@ if($_POST) {
     $state = $shipping_address['state'];
     $pincode = $shipping_address['pinCode'];
 
-    $sql = "INSERT INTO SHIPPING_DETAIL(order_id, full_name, street, city, state, pincode) values ('$order_id', '$full_name', '$street', '$city', '$state', 'pincode')";
+    $sql = "INSERT INTO SHIPPING_DETAIL(order_id, full_name, street, city, state, pincode) values ('$order_id', '$full_name', '$street', '$city', '$state', '$pincode')";
     $exec2 = mysqli_query($connection, $sql);
 
     $shipping_id = mysqli_insert_id($connection);
